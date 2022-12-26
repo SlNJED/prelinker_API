@@ -11,7 +11,7 @@ login_payload = {
 with requests.Session() as session:
     req = session.post(LOGIN_URL, data=login_payload)
     if req.status_code == 200:
-        res = session.get(STATS_URL).json()
+        res = session.get(STATS_URL).json() # You can get all the data from the dashboard with this variable
         
         today = res[0]['data']
         yesterday = res[1]['data']
